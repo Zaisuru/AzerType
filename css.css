@@ -1,0 +1,78 @@
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header{
+    text-align: center;
+}
+
+h1{
+    color:#F76C5E;
+}
+h2{
+    color:#F68E5F;
+}
+header p {
+    color: #FABB9F;
+}
+#form{
+    display: flex;
+    justify-content: center;
+}
+form{
+    border: 1px solid #F68E5F;
+    background-color: #F68E5F;
+    border-radius: 1em;
+    text-align: center;
+}
+form p {
+    color: white;
+    margin: 1em;
+}
+form label{
+    color: white;
+}
+input[type=radio]:checked{
+    background-color: black;
+}
+#motPropose{
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 1em;
+    background-color: #ffffff;
+}
+#containerForUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.motContainer{
+    width: 450px;
+    margin: 0.5em 0 0.5em 0;
+    padding: 0 0.3em 0 0.3em;
+}
+#motUser{
+    width: 70%;
+    float: left;
+    border-radius: 1em;
+}
+#validerMot{
+    width: 25%;
+    border-radius: 1em;
+    float: right;
+    background-color: #fff;
+    color: #F68E5F;
+}
+footer{
+    margin-top: 3%;
+    background-color: #F68E5F;
+    padding: 1%;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
