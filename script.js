@@ -10,24 +10,17 @@ document.addEventListener("DOMContentLoaded", () =>{
     document.getElementById('btnStartGame').addEventListener('click', e => {
         e.preventDefault();
         displayStartGame();
+        updateTrials();
         showWord();
 
 
         document.getElementById("scoreMax").innerHTML= nbTrialsMax ;
-
-        if (nbTrials < nbTrialsMax){
             document.getElementById('validateWord').addEventListener('click', e =>{
                 e.preventDefault();
                 validateWord();
             });
-        }
-        else
-        {
-            resetTrial();
-            alert('La partie est terminée');
-        }
 
-        event.preventDefault();
+        e.preventDefault();
     })
 })
 
@@ -51,8 +44,13 @@ function updateScore(){
 }
 
 function resetWord(){
-    alert('Nombre d\'essai ' + nbTrials + ' / ' + nbTrialsMax);
-    document.getElementById("wordUser").value='';
+    if (nbTrials === nbTrialsMax){
+        alert('La partie est terminée, votre score est de ' + scoreUser + ' sur ' + nbTrialsMax);
+        location.reload();
+    }
+    else{
+        document.getElementById("wordUser").value='';
+    }
 }
 
 function validateWord(){
@@ -64,11 +62,22 @@ function validateWord(){
             showWord();
             updateScore();
             resetWord();
+            updateTrials();
 
         }
         else{
-            showWord();
+            //document.getElementById('wordUser').style.border="3px solid red";
             nbTrials++;
             resetWord();
+            updateTrials();
         }
 }
+
+function updateTrials(){
+    let trialRest = nbTrialsMax - nbTrials;
+    let trialMax = document.getElementById('trialMax');
+
+    document.getElementById('trialRest').textContent = trialRest;
+    trialMax.textContent = nbTrialsMax;
+}
+
