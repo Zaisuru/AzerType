@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 })
 
 
-function displayStartGame(){ // fonction de lancement du jeu
+function displayStartGame(){
     let startGameContainer = document.getElementById('startGame');
     let loadGameContainer = document.getElementById('game');
 
@@ -32,17 +32,17 @@ function displayStartGame(){ // fonction de lancement du jeu
     loadGameContainer.style.display='block';
 }
 
-function showWord(){ // fonction pour afficher un mot aléatoire depuis une liste
+function showWord(){ // Affiche un mot aléatoire depuis une liste
     let indexAlea = Math.floor(Math.random() * listWord.length);
     wordAlea = listWord[indexAlea];
     let wordChoose = document.getElementById("wordChoose");
     wordChoose.innerHTML = wordAlea;
 }
-function updateScore(){ // fonction pour effectuer un update du score de l'user
+function updateScore(){ // Effectue un update du score de l'user
     document.getElementById('scoreUser').textContent = scoreUser ;
 }
 
-function resetWord(){ // fonction de reset du mot proposé
+function resetWord(){ // Reset du mot proposé
     if (nbTrials === nbTrialsMax){
         let retry = document.getElementById('retry');
         document.getElementById('game').style.display = "none";
