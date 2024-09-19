@@ -46,32 +46,26 @@ form label{
     color: #F68E5F;
 }
 
-#motPropose{
+#wordChoose{
     width: 100%;
     padding: 1em;
     border: none;
     border-radius: 1em;
     background-color: #ffffff;
+    color: #F68E5F;
 }
-#containerForUser{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.motContainer{
-    width: 450px;
+#wordUserContainer{
+    width: 100%;
     margin: 0.5em 0 0.5em 0;
     padding: 0 0.3em 0 0.3em;
 }
-#motPropose{
-    color: #F68E5F;
-}
-#motUser{
+#wordUser{
     width: 70%;
     float: left;
     border-radius: 1em;
+    border: none;
 }
-#validerMot{
+#validateWord{
     width: 25%;
     border-radius: 1em;
     float: right;

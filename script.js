@@ -1,8 +1,8 @@
-let listMot = ["Cachalot","Azerty","Statistics","Changement","Informatique"];
-let motAleatoire = "";
+let listWord = ["Cachalot","Azerty","Statistics","Changement","Informatique"];
+let wordAlea = "";
 let scoreUser = 0;
 let nbTrials = 0;
-let nbTrialsMax = listMot.length;
+let nbTrialsMax = listWord.length;
 
 
 document.addEventListener("DOMContentLoaded", () =>{
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         document.getElementById("scoreMax").innerHTML= nbTrialsMax ;
 
         if (nbTrials < nbTrialsMax){
-            document.getElementById('validerMot').addEventListener('click', e =>{
+            document.getElementById('validateWord').addEventListener('click', e =>{
                 e.preventDefault();
                 validateWord();
             });
@@ -41,10 +41,10 @@ function displayStartGame(){
 }
 
 function showWord(){
-    let indexAleatoire = Math.floor(Math.random() * listMot.length);
-    motAleatoire = listMot[indexAleatoire];
-    let motPropose = document.getElementById("motPropose");
-    motPropose.innerHTML = motAleatoire;
+    let indexAlea = Math.floor(Math.random() * listWord.length);
+    wordAlea = listWord[indexAlea];
+    let wordChoose = document.getElementById("wordChoose");
+    wordChoose.innerHTML = wordAlea;
 }
 function updateScore(){
     document.getElementById('scoreUser').textContent = scoreUser ;
@@ -52,13 +52,13 @@ function updateScore(){
 
 function resetWord(){
     alert('Nombre d\'essai ' + nbTrials + ' / ' + nbTrialsMax);
-    document.getElementById("motUser").value='';
+    document.getElementById("wordUser").value='';
 }
 
 function validateWord(){
-    let userWord = document.getElementById('motUser').value;
+    let userWord = document.getElementById('wordUser').value;
 
-        if (userWord === motAleatoire){
+        if (userWord === wordAlea){
             scoreUser++;
             nbTrials++;
             showWord();
