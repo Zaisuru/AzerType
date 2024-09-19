@@ -6,7 +6,6 @@ let nbTrialsMax = listWord.length;
 
 
 document.addEventListener("DOMContentLoaded", () =>{
-
     document.getElementById('btnStartGame').addEventListener('click', e => {
         e.preventDefault();
         displayStartGame();
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 })
 
 
-function displayStartGame(){
+function displayStartGame(){ // fonction de lancement du jeu
     let startGameContainer = document.getElementById('startGame');
     let loadGameContainer = document.getElementById('game');
 
@@ -33,17 +32,17 @@ function displayStartGame(){
     loadGameContainer.style.display='block';
 }
 
-function showWord(){
+function showWord(){ // fonction pour afficher un mot aléatoire depuis une liste
     let indexAlea = Math.floor(Math.random() * listWord.length);
     wordAlea = listWord[indexAlea];
     let wordChoose = document.getElementById("wordChoose");
     wordChoose.innerHTML = wordAlea;
 }
-function updateScore(){
+function updateScore(){ // fonction pour effectuer un update du score de l'user
     document.getElementById('scoreUser').textContent = scoreUser ;
 }
 
-function resetWord(){
+function resetWord(){ // fonction de reset du mot proposé
     if (nbTrials === nbTrialsMax){
         alert('La partie est terminée, votre score est de ' + scoreUser + ' sur ' + nbTrialsMax);
         location.reload();
@@ -53,7 +52,7 @@ function resetWord(){
     }
 }
 
-function validateWord(){
+function validateWord(){ // fonction de validation du mot
     let userWord = document.getElementById('wordUser').value;
 
         if (userWord === wordAlea){
@@ -66,14 +65,13 @@ function validateWord(){
 
         }
         else{
-            //document.getElementById('wordUser').style.border="3px solid red";
             nbTrials++;
             resetWord();
             updateTrials();
         }
 }
 
-function updateTrials(){
+function updateTrials(){ //Fonction pour mettre à jour le nombre d'essai restant
     let trialRest = nbTrialsMax - nbTrials;
     let trialMax = document.getElementById('trialMax');
 
