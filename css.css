@@ -27,6 +27,7 @@ form{
     border: 1px solid #F68E5F;
     background-color: #F68E5F;
     border-radius: 1em;
+    width: 750px;
     text-align: center;
 }
 form p {
@@ -65,10 +66,9 @@ form label{
     border-radius: 1em;
     border: none;
 }
-#validateWord{
+.button{
     width: 25%;
     border-radius: 1em;
-    float: right;
     background-color: #fff;
     color: #F68E5F;
 }
@@ -84,5 +84,9 @@ footer{
 
 /* */
 #game{
+    display: none;
+}
+
+#endGame{
     display: none;
 }

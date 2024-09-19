@@ -22,11 +22,9 @@
 
     <div id="form">
         <form>
-
-            <p>Choisissez votre option et tapez la proposition qui s'affiche dans le champ en-dessous.</p>
-
             <div id="startGame">
-                <button id="btnStartGame">Démarrez la partie</button>
+                <p id="brief">Choisissez votre option et tapez la proposition qui s'affiche dans le champ en-dessous.</p>
+                <button id="btnStartGame" class="button">Démarrez la partie</button>
             </div>
 
 
@@ -41,12 +39,18 @@
 
                 <div id="wordUserContainer">
                     <input type="text" id="wordUser" name="wordUser">
-                    <button value="Valider" id="validateWord">Valider</button>
+                    <button value="Valider" id="validateWord" class="button">Valider</button>
                 </div>
 
                 <div id="score">
                     <p>Votre score <span id="scoreUser">0</span> / <span id="scoreMax">0</span></p>
                 </div>
+            </div>
+
+            <div id="endGame">
+                <p>La partie est terminée</p>
+                <p>Votre score est de <span id="scoreUserEndGame">0</span> / <span id="scoreMaxEndGame">0</span></p>
+                <button id="retry" class="button">Retry</button>
             </div>
         </form>
     </div>

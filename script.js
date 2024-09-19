@@ -44,8 +44,16 @@ function updateScore(){ // fonction pour effectuer un update du score de l'user
 
 function resetWord(){ // fonction de reset du mot proposé
     if (nbTrials === nbTrialsMax){
-        alert('La partie est terminée, votre score est de ' + scoreUser + ' sur ' + nbTrialsMax);
-        location.reload();
+        let retry = document.getElementById('retry');
+        document.getElementById('game').style.display = "none";
+        document.getElementById("endGame").style.display = "block";
+
+        document.getElementById('scoreUserEndGame').textContent = scoreUser;
+        document.getElementById('scoreMaxEndGame').textContent = nbTrialsMax;
+
+        retry.addEventListener('click', e => {
+            location.reload();
+        })
     }
     else{
         document.getElementById("wordUser").value='';
